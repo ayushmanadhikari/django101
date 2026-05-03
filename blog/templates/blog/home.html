@@ -1,11 +1,19 @@
 {% extends 'blog/base.html' %}
 {% block content%}
+    <style>
+        .post-card { background: #fff; border-radius: 10px; padding: 28px 32px; margin-bottom: 20px; border: 1px solid #ebebeb; }
+        .post-card h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; color: #111; }
+        .post-card p { color: #555; font-size: 0.9rem; line-height: 1.7; margin-bottom: 4px; }
+        .post-card p strong { color: #333; }
+    </style>
     <body>
         {% for post in posts %}
+        <div class="post-card">
         <h2>{{ post.title }}</h2>
         <p>{{ post.content }}</p>
         <p><strong>Author:</strong> {{ post.author }}</p>
         <p><strong>Date Posted:</strong> {{ post.date_posted }}</p>
+        </div>
         {% endfor %}
     </body>
 {% endblock content %}
