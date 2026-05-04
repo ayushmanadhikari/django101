@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Posts as dbPosts
 
 posts = [
     {
@@ -14,8 +14,22 @@ posts = [
         'content': 'Second post content',
         'author': 'Ashesh',
         'date_posted': 'June 15, 2025'
+    },
+    {
+        'title': 'Blog Post 3',
+        'content': 'Second post content',
+        'author': 'Ashesh',
+        'date_posted': 'June 15, 2025'
+    },
+    {
+        'title': 'Blog Post 4',
+        'content': 'Fourth post content',
+        'author': 'Ayusman',
+        'date_posted': 'June 20, 2025'
     }
+
 ]
+
 
 def home(request):
     context = {
